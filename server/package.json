@@ -1,0 +1,24 @@
+{
+  "name": "painintheasp-server",
+  "description": "Language Server implementation for classic asp toolset",
+  "version": "0.0.1",
+  "author": "Justin Fenn",
+  "license": "MIT",
+  "engines": {
+    "node": "*",
+    "vscode": "^1.8.0"
+  },
+  "dependencies": {
+    "vscode-languageserver": "^3.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^6.0.52",
+    "typescript": "^2.1.5",
+    "vscode": "^1.0.3"
+  },
+  "scripts": {
+    "compile": "installServerIntoExtension ../client ./package.json ./tsconfig.json && tsc -p .",
+    "watch": "installServerIntoExtension ../client ./package.json ./tsconfig.json && tsc --watch -p .",
+    "postinstall": "node ./node_modules/vscode/bin/install"
+  }
+}
